@@ -18,7 +18,7 @@ data "aws_vpn_gateway" "vpg" {
 data "aws_subnet_ids" "private" {
   vpc_id = "${data.aws_vpc.vpc.id}"
   tags {
-    Tier = "Private"
+    tier = "private"
   }
 }
 

@@ -61,6 +61,8 @@ module "vpn_gateway" {
   # preshared keys (optional)
   tunnel1_preshared_key = "${var.vpn_tunnel1_key}"
   tunnel2_preshared_key = "${var.vpn_tunnel2_key}"
+  tunnel1_inside_cidr   = "${var.custom_tunnel1_inside_cidr}"
+  tunnel2_inside_cidr   = "${var.custom_tunnel2_inside_cidr}"
   
   tags       = "${var.tags}"
 }

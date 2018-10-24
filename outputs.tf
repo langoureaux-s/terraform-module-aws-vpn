@@ -1,7 +1,7 @@
-output "network_security_group_id" {
-  value = "${azurerm_network_security_group.security_group.id}"
+output "vpn_connection_tunnel1_address" {
+  value = "${module.vpn_gateway.vpn_connection_tunnel1_address}"
 }
 
-output "network_security_group_name" {
-  value = "${azurerm_network_security_group.security_group.name}"
+output "vpn_connection_tunnel2_address" {
+  value = "${module.vpn_gateway.vpn_connection_tunnel2_address}"
 }

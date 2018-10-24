@@ -23,6 +23,10 @@ variable "vpn_tunnel2_key" {
   description = "The preshared key for the tunnel 2"
 }
 
+variable "customer_cidr_networks" {
+  type = "list"
+  description = "The CIDR customer network to route on"
+}
 
 variable "tags" {
   type = "map"

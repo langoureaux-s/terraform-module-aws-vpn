@@ -23,12 +23,6 @@ variable "vpn_tunnel2_key" {
   description = "The preshared key for the tunnel 2"
 }
 
-variable "custom_tunnel1_inside_cidr" {
-}
-
-variable "custom_tunnel2_inside_cidr" {
-  
-}
 
 variable "tags" {
   type = "map"

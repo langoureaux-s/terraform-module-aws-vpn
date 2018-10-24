@@ -24,7 +24,7 @@ data "aws_subnet_ids" "private" {
 
 # Get private route table
 data "aws_route_tables" "private_routes" {
-  vpc_id = "${var.vpc_id}"
+  vpc_id = "${data.aws_vpc.vpc.id}"
 
   filter {
     name   = "tag:Name"

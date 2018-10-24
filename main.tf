@@ -22,6 +22,16 @@ data "aws_subnet_ids" "private" {
   }
 }
 
+# Get private route table
+data "aws_route_tables" "private_routes" {
+  vpc_id = "${var.vpc_id}"
+
+  filter {
+    name   = "tag:Name"
+    values = ["*-private"]
+  }
+}
+
 
 # Create a customer gateway
 resource "aws_customer_gateway" "vpn" {
@@ -42,8 +52,8 @@ module "vpn_gateway" {
 
 
   # precalculated length of module variable vpc_subnet_route_table_ids
-  vpc_subnet_route_table_count = "${length(data.aws_subnet_ids.private.ids)}"
-  vpc_subnet_route_table_ids   = "${data.aws_subnet_ids.private.ids}"
+  vpc_subnet_route_table_count = "${length(data.aws_route_tables.private_routes.ids)}"
+  vpc_subnet_route_table_ids   = "${data.aws_route_tables.private_routes.ids}"
   
   # Route type
   vpn_connection_static_routes_only = "${var.static_route}"

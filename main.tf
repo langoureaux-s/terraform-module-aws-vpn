@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "${var.location}"
-}
-
 # Get vpc
 data "aws_vpc" "vpc" {
   tags {

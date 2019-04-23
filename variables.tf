@@ -23,6 +23,16 @@ variable "vpn_tunnel2_key" {
   description = "The preshared key for the tunnel 2"
 }
 
+variable "vpn_tunnel1_inside_cidr" {
+  description = "The CIDR block of the inside IP addresses for the first VPN tunnel"
+  default = "169.254.33.88/30"
+}
+
+variable "vpn_tunnel2_inside_cidr" {
+  description = "The CIDR block of the inside IP addresses for the second VPN tunnel"
+  default = "169.254.33.100/30"
+}
+
 variable "customer_cidr_networks" {
   type = "list"
   description = "The CIDR customer network to route on"

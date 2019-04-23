@@ -60,6 +60,8 @@ module "vpn_gateway" {
   vpn_connection_static_routes_destinations = "${var.customer_cidr_networks}"
 
   # preshared keys (optional)
+  tunnel1_inside_cidr   = "${var.vpn_tunnel1_inside_cidr}"
+  tunnel2_inside_cidr   = "${var.vpn_tunnel2_inside_cidr}"
   tunnel1_preshared_key = "${var.vpn_tunnel1_key}"
   tunnel2_preshared_key = "${var.vpn_tunnel2_key}"
   

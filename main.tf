@@ -44,7 +44,7 @@ resource "aws_customer_gateway" "vpn" {
 
 # Create a VPN gateway
 module "vpn_gateway" {
-  source = "github.com/terraform-aws-modules/terraform-aws-vpn-gateway"
+  source = "github.com/terraform-aws-modules/terraform-aws-vpn-gateway?ref=v1.6.1"
 
   vpc_id                  = "${data.aws_vpc.vpc.id}"
   vpn_gateway_id          = "${data.aws_vpn_gateway.vpg.id}"
